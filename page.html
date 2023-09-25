@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISC Personality Assessment</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('img/fondo.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid #000000;
+        }
+
+        th, td {
+            text-align: center; /* Centra el texto en las cajas de respuesta */
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th.D {
+            background-color: #f00;
+            color: #fff;
+        }
+
+        th.I {
+            background-color: #ff0;
+            color: #000;
+        }
+
+        th.S {
+            background-color: #0f0;
+            color: #fff;
+        }
+
+        th.C {
+            background-color: #00f;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Button Style */
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Total Scores */
+        p {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        span {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        /* Input Styles */
+        input[type="number"] {
+            width: 30px;
+            text-align: center;
+        }
+
+        /* Highlighted Rows */
+        tr.highlighted {
+            background-color: #ffff99; /* Color de resaltado */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DISC Renovando Conciencia</h1>
+        <p>Asigna un 4 a la palabra que mejor te describa en cada línea. Luego, un 3 junto a la palabra que te describa en orden descendente de prioridades, un 2 para la tercera mejor palabra y un 1 para la palabra que menos describa tu personalidad.</p>
+        <table>
+            <tr>
+                <th class="D">D</th>
+                <th class="I">I</th>
+                <th class="S">S</th>
+                <th class="C">C</th>
+            </tr>
+            <tr>
+                <td>Gusta tener autoridad</td>
+                <td>Entusiasta</td>
+                <td>Sensible</td>
+                <td>Gusta recibir instrucciones</td>
+            </tr>
+            <tr class="highlighted">
+                <td><input type="number" name="D_word1" min="1" max="4"></td>
+                <td><input type="number" name="I_word1" min="1" max="4"></td>
+                <td><input type="number" name="S_word1" min="1" max="4"></td>
+                <td><input type="number" name="C_word1" min="1" max="4"></td>
+            </tr>
+            <tr>
+                <td>Se hace cargo</td>
+                <td>Asume riesgos</td>
+                <td>Leal</td>
+                <td>Preciso</td>
+            </tr>
+            <tr class="highlighted">
+                <td><input type="number" name="D_word2" min="1" max="4"></td>
+                <td><input type="number" name="I_word2" min="1" max="4"></td>
+                <td><input type="number" name="S_word2" min="1" max="4"></td>
+                <td><input type="number" name="C_word2" min="1" max="4"></td>
+            </tr>
+            <tr>
+                <td>Decidido</td>
+                <td>Visonario</td>
+                <td>Tranquilo,equilibrado</td>
+                <td>coherente</td>
+            </tr>
+            <tr class="highlighted">
+                <td><input type="number" name="D_word3" min="1" max="4"></td>
+                <td><input type="number" name="I_word3" min="1" max="4"></td>
+                <td><input type="number" name="S_word3" min="1" max="4"></td>
+                <td><input type="number" name="C_word3" min="1" max="4"></td>
+            </tr>
+            <tr>
+                <td>Emprendedor</td>
+                <td>Le gusta hablar</td>
+                <td>Disfruta de la rutina</td>
+                <td>Predecible</td>
+            </tr>
+            <tr class="highlighted">
+                <td><input type="number" name="D_word4" min="1" max="4"></td>
+                <td><input type="number" name="I_word4" min="1" max="4"></td>
+                <td><input type="number" name="S_word4" min="1" max="4"></td>
+                <td><input type="number" name="C_word4" min="1" max="4"></td>
+            </tr>
+            <tr>
+                <td>Competitivo</td>
+                <td>impulsor</td>
+                <td>Le disgustan los cambios</td>
+                <td>Practico</td>
+            </tr>
+            <tr class="highlighted">
+                <td><input type="number" name="D_word5" min="1" max="4"></td>
+                <td><input type="number" name="I_word5" min="1" max="4"></td>
+                <td><input type="number" name="S_word5" min="1" max="4"></td>
+                <td><input type="number" name="C_word5" min="1" max="4"></td>
+            </tr>
+            <tr>
+                <td>Resuelve problemas</td>
+                <td>Disfruta de la popularidad</td>
+                <td>Cede ante los demas</td>
+                <td>Objetivo</td>
+            </tr>
+            <tr class="highlighted">
+                <td><input type="number" name="D_word6" min="1" max="4"></td>
+                <td><input type="number" name="I_word6" min="1" max="4"></td>
+                <td><input type="number" name="S_word6" min="1" max="4"></td>
+                <td><input type="number" name="C_word6" min="1" max="4"></td>
+            </tr>
+            <tr>
+                <td>Productivo</td>
+                <td>Le encanta divertirse</td>
+                <td>Evita la confrontacion</td>
+                <td>Meticuloso</td>
+            </tr>
+            <tr class="highlighted">
+                <td><input type="number" name="D_word7" min="1" max="4"></td>
+                <td><input type="number" name="I_word7" min="1" max="4"></td>
+                <td><input type="number" name="S_word7" min="1" max="4"></td>
+                <td><input type="number" name="C_word7" min="1" max="4"></td>
+            </tr>
+            <tr>
+                <td>Audaz</td>
+                <td>Amante de la variedad</td>
+                <td>Comprensivo</td>
+                <td>Perfeccionista</td>
+            </tr>
+            <tr class="highlighted">
+                <td><input type="number" name="D_word8" min="1" max="4"></td>
+                <td><input type="number" name="I_word8" min="1" max="4"></td>
+                <td><input type="number" name="S_word8" min="1" max="4"></td>
+                <td><input type="number" name="C_word8" min="1" max="4"></td>
+            </tr>
+            <tr>
+                <td>Toma decisiones</td>
+                <td>Espontaneo</td>
+                <td>Cultivador</td>
+                <td>Detallista</td>
+            </tr>
+            <tr class="highlighted">
+                <td><input type="number" name="D_word9" min="1" max="4"></td>
+                <td><input type="number" name="I_word9" min="1" max="4"></td>
+                <td><input type="number" name="S_word9" min="1" max="4"></td>
+                <td><input type="number" name="C_word9" min="1" max="4"></td>
+            </tr>
+            <tr>
+                <td>insistente</td>
+                <td>Inspirador</td>
+                <td>Pacifista</td>
+                <td>Analítico</td>
+            </tr>
+            <tr class="highlighted">
+                <td><input type="number" name="D_word10" min="1" max="4"></td>
+                <td><input type="number" name="I_word10" min="1" max="4"></td>
+                <td><input type="number" name="S_word10" min="1" max="4"></td>
+                <td><input type="number" name="C_word10" min="1" max="4"></td>
+            </tr>
+            <!-- Agregar filas con una palabra por factor -->
+        </table>
+
+        <div>
+            <h2>Puntuación:</h2>
+            <p>Total D <span id="totalD">____</span> Total I <span id="totalI">____</span> Total S <span id="totalS">____</span> Total C <span id="totalC">____</span></p>
+            <button onclick="calculateScores()">Calcular</button>
+        </div>
+    </div>
+
+    <script>
+        function calculateScores() {
+            const factors = ['D', 'I', 'S', 'C'];
+            let totalScores = {};
+            let highestScore = 0;
+            let highestFactors = [];
+    
+            for (let factor of factors) {
+                totalScores[factor] = 0;
+            }
+    
+            // Collect scores for each factor and check for duplicates
+            for (let i = 1; i <= 10; i++) { // Recorre las filas
+                const scores = {};
+    
+                for (let factor of factors) {
+                    const input = document.querySelector(`input[name=${factor}_word${i}]`);
+                    const score = parseInt(input.value);
+    
+                    if (!isNaN(score) && score >= 1 && score <= 4) {
+                        if (scores[score]) {
+                            alert(`Puntuación duplicada ${score} en la misma fila para diferentes factores.`);
+                            return;
+                        }
+    
+                        scores[score] = true;
+                        totalScores[factor] += score;
+                    } else {
+                        alert(`Puntuación no válida para el Factor ${factor}`);
+                        return;
+                    }
+                }
+            }
+    
+            // Muestra las puntuaciones calculadas
+            document.getElementById('totalD').textContent = totalScores['D'];
+            document.getElementById('totalI').textContent = totalScores['I'];
+            document.getElementById('totalS').textContent = totalScores['S'];
+            document.getElementById('totalC').textContent = totalScores['C'];
+    
+            // Encuentra el factor con la puntuación más alta o iguales
+            for (let factor of factors) {
+                if (totalScores[factor] > highestScore) {
+                    highestFactors = [factor];
+                    highestScore = totalScores[factor];
+                } else if (totalScores[factor] === highestScore) {
+                    highestFactors.push(factor);
+                }
+            }
+    
+            // Construct a message for all factors with the highest score
+            let highestFactorsMessage = '';
+            for (let i = 0; i < highestFactors.length; i++) {
+                if (i === 0) {
+                    highestFactorsMessage += highestFactors[i];
+                } else if (i === highestFactors.length - 1) {
+                    highestFactorsMessage += ` y ${highestFactors[i]}`;
+                } else {
+                    highestFactorsMessage += `, ${highestFactors[i]}`;
+                }
+            }
+    
+            alert(`El/los factor/es con la puntuación más alta es/son ${highestFactorsMessage} con una puntuación de ${highestScore}`);
+        }
+    </script>
+    
+</body>
+</html>
